@@ -66,24 +66,25 @@ if answer == response:
     print("Your weakness is vemon. Beware of the scorpion.")
 if answer != response:
     print(input(str("Insert weapon of choice:")))
-weapon = input(str("Neat weapon! Work hard and try to beat the scorpion. **Hint** In order to beat the scorpion, you must understand the scorpion. Which character understands animals? *Hit enter again*"))
-print(int(input("""
+weapon = input(str("Work hard and try to beat the scorpion. **Hint** In order to beat the scorpion, you must understand the scorpion. Which character understands animals? *Hit enter again*"))
+print(input(str("""
 1. Janessa Rangel
 2. Clarissa Rangel
 3.Cailtin Moy
-4. Henry Smolder- """)))
+4. Henry Smolder - """)))
 response = "1"
 if weapon == response:
-    print("You have chosen wisely. Janessa has successfully advanced you to the next level.")
+    print(input(str("You have chosen wisely. Janessa has successfully advanced you to the next level.")))
 if weapon != response:
     print(input(str("Try Again:")))
-
-print("Yay! Your fifth task requires you to collect logs. Your inventory currently has zero logs. You have to collect 20 and make a fire.")
+#Printing the fifth task
+input("Yay! Your fifth task requires you to collect logs. Your inventory currently has zero logs. You have to collect 20 and make a fire.")
+#using same list that created inventory to add another item in the list
 inventory = {'knife': 4, 'bow': 1, 'arrows': 150, 'change of clothes': 2, 'water bottle': 4, 'tent': 1, 'blanket': 5, 'binoculars': 2, 'hat(pith Helmet and Sun cap)': 2, 'logs':0}
 for k,v in inventory.items():
-    print(f" {k} : {v} ")
-def respond_to_numberq(number):
-    if number == "5":
+    print(f" {k} : {v} ")#printing the keys and values
+def respond_to_numberq(number):#Defining a function
+    if number == "5":#Uisng if and elif statements
         print("Oh no! You have been eaten by a bear!")
     elif number == "4":
         print("Congratulations! You have chosen the lucky section. Go and grab your logs!")
@@ -93,7 +94,55 @@ def respond_to_numberq(number):
         print("Congratulations! You have chosen the lucky section. Go and grab your logs!")
     elif number == "1":
         print("Oh no! You have accidentally entered the bunny region. You can pet the bunnies but remember to stay focused on your task.")
-respond_to_numberq(int(input("Welcome to the Wild Jungle. The logs are scattered everywhere. Each section of the jungle is represented by a number (1-5). Choose a number to determine your fate.")))
+#Calling the function
+respond_to_numberq(input(str("Welcome to the Wild Jungle. The logs are scattered everywhere. Each section of the jungle is represented by a number (1-5). Choose a number to determine your fate.")))
+
+answer = input(str("Have you died three times already? Y/N")).upper()
+question = "Y"
+if answer == question:
+    print(input(str("Exit the program")))
+if answer !=  question:
+    print(input(str("Congratulations! You have moved on to the next level. Time to check your stats and inventory again.")))
+#Creating a class to make health stats
+class Stats(object):
+    def __init__(self, name , health,):
+        #Initializng a new instance of Stats class
+        self.name = name
+        self.health = health
+        self.inventory  = inventory
+Janessa = Stats('Janessa Rangel', 'Very healthy -- not dehyrated')
+Clarissa = Stats('Clarissa Rangel', 'Healthy -- a bit dehyrdrated')
+Caitlin = Stats('Caitlin Moy', 'Healthy')
+Henry = Stats('Henry Smolder', 'Need to drink water')
+#Printing to show the health of every character
+print(Janessa.name)
+print(Janessa.health)
+print("-----")#Used to separate the objects
+print(Clarissa.name)
+print(Clarissa.health)
+print("-----")
+print(Caitlin.name)
+print(Caitlin.health)
+print("-----")
+print(Henry.name)
+print(Henry.health)
+
+input("Alright! This is your final task! You have to journey across the ring of fire to win the game.")
+answer = (input(str("To get across the ring of fire, you must travel through the fire. How do you plan to do this: a. I will swim in the water b. I will hop on top of each volcano because I am that cool.")))
+response = "b"
+if answer == question:
+    print("Of course you are that cool! Be careful and win the game!")
+if answer != question:
+    print("Be careful and look out for creepy animals")
+
+print("If you chose option a, you have unfortunately died, and lost the game. A shark ate you alive. If you chose b, then that was the quickest way to journey across the ring of fire. Congratulations. You have WON the game!")
+
+answer =(input(str("Who is playing this game (insert real name)? --->")))
+
+print(f"Well {answer}, I hope you had fun and ejoyed the game!")
+
+
+
 
 
 
